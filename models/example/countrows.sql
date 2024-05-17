@@ -1,1 +1,1 @@
-SELECT COUNT(*) FROM {{ ref("job_execution") }}
+SELECT COUNT(*) FROM {{ ref("job_execution") }} -- Count the records in the audit table
