@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM {{ ref("historized_countrows") }}
