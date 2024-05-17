@@ -1,1 +1,1 @@
-SELECT COUNT(*) FROM {{ ref("job_execution") }}
+SELECT COUNT(*) FROM {{ ref("job_execution") }} -- comment
