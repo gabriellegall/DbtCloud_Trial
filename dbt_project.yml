@@ -40,7 +40,8 @@ models:
   my_new_project:
     staging:
       +schema: stg
-
+    int:
+      +schema: int
 seeds:
   my_new_project:
     +delimiter: ";"
