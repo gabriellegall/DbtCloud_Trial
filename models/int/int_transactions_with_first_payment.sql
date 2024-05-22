@@ -7,6 +7,7 @@ WITH CTE_DATE_DEFINITION AS
         , t.transaction_amount
         , {{ dbt_utils.star(from=ref('int_payment_first_per_user'), except=['payment_user_id']) }}
         , MIN(t.transaction_date) OVER (PARTITION BY t.transaction_user_id) AS first_transaction_date
+        , MIN(t.transaction_user_card_activation_date) OVER (PARTITION BY t.transaction_user_id) AS first_transaction_user_card_activation_date
         , MAX(t.transaction_date) OVER () AS dataset_end_date
     FROM {{ ref("stg_lydia__transactions") }} t
     LEFT OUTER JOIN {{ ref("int_payment_first_per_user") }} p
