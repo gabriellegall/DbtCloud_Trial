@@ -28,6 +28,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 on-run-end:
   - "{{ dbt_artifacts.upload_results(results) }}"
+dispatch:
+  - macro_namespace: dbt
+    search_order: ['dbt_project_evaluator', 'dbt']
 
 models:
   my_new_project:
@@ -37,7 +40,9 @@ models:
       +schema: int
   dbt_artifacts:
     +schema: admin
-
+  dbt_project_evaluator:
+    +schema: eval
+    
 seeds:
   my_new_project:
     +delimiter: ";"

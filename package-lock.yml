@@ -3,4 +3,6 @@ packages:
     version: 1.1.1
   - package: brooklyn-data/dbt_artifacts
     version: 2.6.3
-sha1_hash: fdd25d7d09a2e5ed5891f3dd32fa732f3a7ff897
+  - package: dbt-labs/dbt_project_evaluator
+    version: 0.11.0
+sha1_hash: 85c6bba91edbd2f8b005bc3e451163ee44f5c966
